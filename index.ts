@@ -398,7 +398,7 @@ async function init() {
 
   PIXI.Assets.add({
     alias: "spineboy-data",
-    src: "./c850_aim_00.skel",
+    src: "/c850_aim_00.skel",
   });
 
   PIXI.Assets.setPreferences({
@@ -451,7 +451,7 @@ async function init() {
     }
   });
 
-  const physicsConfig: PhysicsConfig = await fetch("./aim-physics.json").then(
+  const physicsConfig: PhysicsConfig = await fetch("/aim-physics.json").then(
     (res) => res.json()
   );
 
