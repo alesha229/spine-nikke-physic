@@ -2,10 +2,12 @@
   "name": "spine-physics-viewer",
   "version": "1.0.0",
   "description": "Spine 4.1 model viewer with NIKKE physics configuration",
-  "main": "dist/index.ts",
+  "main": "./index.ts",
   "scripts": {
-    "start": "vite",
-    "build": "vite build",
+    "dev": "cross-env NODE_ENV=development vite",
+    "start": "npm run dev",
+    "build": "cross-env NODE_ENV=production vite build",
+    "preview": "cross-env NODE_ENV=production vite preview",
     "deploy": "npm run build && gh-pages -d dist --add"
   },
   "dependencies": {
@@ -16,6 +18,7 @@
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
+    "cross-env": "^7.0.3",
     "gh-pages": "^6.3.0",
     "typescript": "^5.1.6"
   }
