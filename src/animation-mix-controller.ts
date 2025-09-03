@@ -26,7 +26,7 @@ export class AnimationMixController {
     number,
     { isPlaying: boolean; lastAnimation: string }
   >;
-
+  private currentIdleName = "aim_idle";
   constructor(spine: Spine, config: AnimationMixConfig) {
     this.spine = spine;
     this.config = config;
@@ -63,7 +63,6 @@ export class AnimationMixController {
     this.config.animations.forEach((anim) => {
       const track = anim.track;
       const trackState = this.trackStates.get(track);
-
       if (anim.loop) {
         if (!this.playedTracks.has(track)) {
           const trackEntry = this.spine.state.setAnimation(
